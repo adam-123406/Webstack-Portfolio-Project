@@ -1,0 +1,70 @@
+<ul class="nav nav-tabs">
+    <li><a href="#" ng-click="$event.preventDefault();selectedTab='insertFlights'">InsertFlights</a></li>
+    <li><a href="#" ng-click="$event.preventDefault();selectedTab='insertPlains';">INsertPlains</a></li>
+    <li><a href="#" ng-click="$event.preventDefault();selectedTab='getReservations';getreservations()">Reservations</a></li>
+</ul>
+
+<div ng-switch="selectedTab">
+    <div ng-switch-when="getReservations">
+        <table class="table table-bordered table-hover">
+            <tr class="success">
+                <th>Name</th>
+                <th>No of Seats</th>
+                <th>Modify</th>
+                <th>Delete</th>
+            </tr>
+            <tr ng-repeat="plain in plains">
+                <td>{{$index+1}}</td>
+                <td>{{plain.name}}</td>
+                <td>{{plain.no_of_seats}}</td>
+                <td><button class="btn btn-success" ng-click="modifyMeal($index,meal)">Modify</button> </td>
+                <td><button class="btn btn-danger" ng-click="deleteMeal($index,meal.id)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+    <div ng-switch-when="insertPlains">
+        <form class="well" ng-submit="insertPlains()">
+            <div class="form-group">
+
+                <div class="form-group">
+                    <label>name</label>
+                    <input type="text" class="form-control" ng-model="plainsData.name" required>
+                </div>
+                <div class="form-group">
+                    <label>No of Seats</label>
+                    <input type="number" class="form-control" ng-model="plainsData.no_of_seats" required>
+                </div>
+
+            </div>
+            <button class="btn btn-success">Submit</button>
+        </form>
+    </div>
+    <div ng-switch-default>
+        <form class="well" ng-submit="insertFlights()">
+            <div class="form-group">
+
+                <div class="form-group">
+                    <label>From</label>
+                    <input type="text" class="form-control" ng-model="flightsData.froms" required>
+                </div>
+                <div class="form-group">
+                    <label>To</label>
+                    <input type="text" class="form-control" ng-model="flightsData.too" required>
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" class="form-control" ng-model="flightsData.price" required>
+                </div>
+                <div class="form-group">
+                    <label>time of Takeoff</label>
+                    <input type="time" class="form-control" ng-model="flightsData.time_of_takeoff" required>
+                </div>
+                <div class="form-group">
+                    <label> Date of takeoff</label>
+                    <input type="date" class="form-control" ng-model="flightsData.date_of_takeoff" required>
+                </div>
+            </div>
+            <button class="btn btn-success">Submit</button>
+    </form>
+</div>
+</div>
