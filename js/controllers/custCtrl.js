@@ -25,7 +25,7 @@ angular.module("myApp")
             plain.price=parseFloat(plain.price)
             $scope.selectedPlain=plain
             x=$uibModal.open({
-                templateUrl:"templates/modals/orderReservation.html",
+                templateUrl:"templates/orderReservation.html",
                 scope:$scope
             })
 

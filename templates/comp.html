@@ -16,9 +16,9 @@
             <tr ng-repeat="plain in plains">
                 <td>{{$index+1}}</td>
                 <td>{{plain.name}}</td>
-                <td>{{plain.no_of_seats}}</td>
-                <td><button class="btn btn-success" ng-click="modifyMeal($index,meal)">Modify</button> </td>
-                <td><button class="btn btn-danger" ng-click="deleteMeal($index,meal.id)">Delete</button></td>
+                <td>{{plain.no_of_seats}}</td>        
+                <td><button class="btn btn-success" ng-click="modifyFlights($index,Flights)">Modify</button> </td>
+                <td><button class="btn btn-danger" ng-click="deleteFlights($index,Flights.id)">Delete</button></td>
             </tr>
         </table>
     </div>
