@@ -1,0 +1,58 @@
+<div ng-switch="selectedTab">
+    <div ng-switch-when="reg">
+        <form class="well" ng-submit="register()">
+            <div class="form-group">
+                <label>Service Type</label>
+                <select class="form-control" ng-model="data.type" required>
+                    <option value="cust">Customer</option>
+                    <option value="comp">company</option>
+                </select></div>
+        <div class="form-group">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" ng-model="data.name" required>
+            </div>
+            <div class="form-group">
+                <label>Telphone</label>
+                <input type="tel" class="form-control" ng-model="data.tel" required>
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <textarea class="form-control" ng-model="data.addr" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" ng-model="data.user" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" ng-model="data.pass" required>
+            </div>
+            <button class="btn btn-success">Submit</button>
+        </div>
+        </form>
+    </div>
+    <div ng-switch-when="login">
+        <form class="well" ng-submit="login()">
+            <div class="form-group">
+                <label>Service Type</label>
+                <select class="form-control" ng-model="loginData.type" required>
+                    <option value="cust">Customer</option>
+                    <option value="comp">company</option>
+                </select></div>
+
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" ng-model="loginData.user" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" ng-model="loginData.pass" required>
+            </div>
+            <button class="btn btn-success">Login</button>
+        </form>
+    </div>
+    <div ng-switch-default>
+        <h1>Home</h1>
+    </div>
+</div>
